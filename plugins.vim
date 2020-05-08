@@ -61,7 +61,7 @@ Plug 'heavenshell/vim-jsdoc'
 " === Syntax Highlighting === "
 
 " Syntax highlighting for nginx
-Plug 'chr4/nginx.vim'
+" Plug 'chr4/nginx.vim'
 
 " Syntax highlighting for javascript libraries
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -74,7 +74,9 @@ Plug 'othree/yajs.vim'
 Plug 'scrooloose/nerdtree'
 
 " Colorscheme
-Plug 'mhartington/oceanic-next'
+" Plug 'mhartington/oceanic-next'
+" Plug 'dracula/vim'
+Plug 'joshdick/onedark.vim'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
@@ -83,6 +85,14 @@ Plug 'vim-airline/vim-airline-themes'
 " Icons
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plug 'sheerun/vim-polyglot'
+
+Plug 'elixir-editors/vim-elixir'
+" Plug 'amiralies/coc-elixir', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+"
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()

@@ -8,6 +8,9 @@ source ~/.config/nvim/plugins.vim
 " Remap leader key to ,
 let g:mapleader=','
 
+set encoding=UTF-8
+set guifont=FiraCode\ Nerd\ Font 
+
 " Disable line numbers
 set nonumber
 
@@ -51,6 +54,7 @@ set shortmess+=c
 
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
+"
 " ============================================================================ "
 
 " Wrap in try/catch to avoid errors on initial install before plugin is available
@@ -140,6 +144,9 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" from checkhealth
+let g:vimtex_compiler_progname='nvr'
 
 " Load custom snippets from snippets folder
 let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
@@ -232,7 +239,7 @@ let g:signify_sign_delete = '-'
 set termguicolors
 
 " Vim airline theme
-let g:airline_theme='space'
+let g:airline_theme='onedark'
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -290,8 +297,8 @@ function! s:custom_jarvis_colors()
   hi SignifySignChange guifg=#c594c5
 endfunction
 
-autocmd! ColorScheme * call TrailingSpaceHighlights()
-autocmd! ColorScheme OceanicNext call s:custom_jarvis_colors()
+" autocmd! ColorScheme * call TrailingSpaceHighlights()
+" autocmd! ColorScheme OceanicNext call s:custom_jarvis_colors()
 
 " Call method on window enter
 augroup WindowManagement
@@ -309,7 +316,8 @@ endfunction
 " Editor theme
 set background=dark
 try
-  colorscheme OceanicNext
+  " colorscheme OceanicNext
+  colorscheme onedark
 catch
   colorscheme slate
 endtry
@@ -393,7 +401,7 @@ nmap <leader>f :NERDTreeFind<CR>
 
 "   <Space> - PageDown
 "   -       - PageUp
-noremap <Space> <PageDown>
+" noremap <Space> <PageDown>
 noremap - <PageUp>
 
 " Quick window switching
@@ -475,3 +483,10 @@ set noswapfile
 if exists('g:loaded_webdevicons')
   call webdevicons#refresh()
 endif
+
+nnoremap <C-p> :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
