@@ -11,6 +11,9 @@ let g:mapleader=','
 set encoding=UTF-8
 set guifont=FiraCode\ Nerd\ Font 
 
+" enable mouse
+set mouse=a
+
 " Disable line numbers
 set nonumber
 
